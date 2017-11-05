@@ -57,8 +57,12 @@ public class NovelFront : UtilUI {
                 fadeSpeed /= 2.0f;
                 FadeIn(0.0f, 0.0f);
                 break;
+            case "FadeInBtoG":
+                fadeSpeed /= 4.0f;
+                FadeIn(0.5f, 0.0f);
+                break;
             default:
-                Debug.Log("FadeType Command miss");
+                Debug.Log(currentData[CSV_COMMAND] + currentData[CSV_FADE_TYPE] + " FadeType Command miss");
                 break;
         }
 

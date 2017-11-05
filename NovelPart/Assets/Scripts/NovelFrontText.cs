@@ -87,7 +87,9 @@ public class NovelFrontText : UtilUI
     // 文字を一文字ずつ表示する(Update内に置く)
     public static void DisplayLine()
     {
+
         NovelManager.frontText.text = currentFrontText;
+        /*
 
         // クリックから経過した時間が想定表示時間の何％か確認し、表示文字を出す
         int displayCharacterCount = (int)(Mathf.Clamp01((Time.time - frontTimeElapsed) / frontTimeUnitilDisplay) * currentFrontText.Length);
@@ -98,6 +100,7 @@ public class NovelFrontText : UtilUI
             NovelManager.frontText.text = hideTag(currentFrontText.Substring(0, displayCharacterCount));
             frontLastUpdateCharacter = displayCharacterCount;
         }
+        */
     }
 
     // タグを表示させないようにする

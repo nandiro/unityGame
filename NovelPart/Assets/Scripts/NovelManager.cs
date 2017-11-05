@@ -32,6 +32,9 @@ public class NovelManager : UtilUI {
         frontText.enabled = false;
         baloonImage.enabled = false;
         baloonText.enabled = false;
+        rightActor.enabled = false;
+        leftActor.enabled = false;
+        centerActor.enabled = false;
         isClicked = true;
     }
 
@@ -70,7 +73,7 @@ public class NovelManager : UtilUI {
             case "SetCharacter":
                 NovelActor.Display(csvDatas[currentLine]);
                 break;
-            case "SetBackgrond":
+            case "SetBackGraund":
                 NovelBack.Display(csvDatas[currentLine]);
                 break;
             case "Message":
@@ -91,7 +94,7 @@ public class NovelManager : UtilUI {
                 NovelFrontText.Hide(csvDatas[currentLine]);
                 break;
             default:
-                Debug.Log("command miss");
+                Debug.Log(currentLine + csvDatas[currentLine][CSV_COMMAND] +" command miss");
                 break;
         }
     }

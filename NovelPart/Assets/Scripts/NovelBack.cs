@@ -18,7 +18,7 @@ public class NovelBack : UtilUI {
     
     private static void DisplayBackImage(string imagePath)
     {
-        NovelManager.backImage.sprite = GetResourcesSprite(imagePath);
+        NovelManager.backImage.sprite = GetResourcesSprite("BackGraund/" + imagePath);
     }
 
 }
