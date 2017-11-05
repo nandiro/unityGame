@@ -11,8 +11,8 @@ public class NovelBaloon : UtilUI {
     public static int baloonLastUpdateCharacter = -1;   // 表示中の文字数
 
     //文字を一文字ずつ表示する
-    public static float intervalForCharacterDisplay = 0.05f;
-
+    public static float intervalForCharacterDisplay = 0.02f;
+    
     // 文字が最後まで表示されているかどうかの判定式
     public static bool IsCompleteDisplayText
     {

@@ -23,6 +23,9 @@ public class CSV : MonoBehaviour {
             {
                 // 行が最大カラム数に達していない場合、もう一行読み込んで追加する
                 line = line + "\n" + reader.ReadLine();
+                // 改行時についてくる””を取り除く
+                line = line.Replace(",\"",",");
+                line = line.Replace("\",", ",");
             }
             csvDatas.Add(line.Split(','));
         }
