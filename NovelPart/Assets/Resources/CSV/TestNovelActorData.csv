@@ -1,0 +1,9 @@
+Command,wait,position,text,fadeType,fadeTime,baloonType,path
+text,0,center,(」・ω・)」うー！(／・ω・)／にゃー !,,,accent,
+text,0,left,（人と話しながら
+食べるの久しぶりだな……）,,,normal,
+text,0,left,モグモグモグ……,,,normal,
+text,0,right,……ッ！？！？！？！,,,accent,
+text,0,right,あっ、うん、なんていうか
+<color=red>独特な味</color>だね,,,normal,
+text,0,left,"""お前の味覚は壊れてるのかー！""",,,accent,
