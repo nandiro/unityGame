@@ -85,8 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CSV.cs" />
-    <Compile Include="Assets\Scripts\DungeonManager.cs" />
-    <Compile Include="Assets\Scripts\DungeonMove.cs" />
+    <Compile Include="Assets\Scripts\FieldManager.cs" />
     <Compile Include="Assets\Scripts\Flick.cs" />
     <Compile Include="Assets\Scripts\NovelActor.cs" />
     <Compile Include="Assets\Scripts\NovelBack.cs" />
@@ -94,6 +93,7 @@
     <Compile Include="Assets\Scripts\NovelFront.cs" />
     <Compile Include="Assets\Scripts\NovelFrontText.cs" />
     <Compile Include="Assets\Scripts\NovelManager.cs" />
+    <Compile Include="Assets\Scripts\ScreenShift.cs" />
     <Compile Include="Assets\Scripts\TextController.cs" />
     <Compile Include="Assets\Scripts\Token.cs" />
     <Compile Include="Assets\Scripts\UtilUI.cs" />
