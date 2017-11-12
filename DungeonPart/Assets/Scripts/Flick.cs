@@ -34,7 +34,10 @@ public class Flick : MonoBehaviour {
     {
         float directionX = touchEndPos.x - touchStartPos.x;
         float directionY = touchEndPos.y - touchStartPos.y;
-       
+
+        //Debug.Log(directionX);
+        //Debug.Log(directionY);
+
         if (Mathf.Abs(directionY) < Mathf.Abs(directionX))
         {
             if (30 < directionX)
