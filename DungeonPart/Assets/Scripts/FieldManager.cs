@@ -143,4 +143,5 @@ public class FieldManager : MonoBehaviour {
         backImage.sprite = Resources.Load<Sprite>("Sprites/BackGraund/" + imagePath);
     }
 
+    
 }

@@ -73,30 +73,13 @@ public class ScreenShift : MonoBehaviour {
             case "touch":
                 // タッチされた時の処理
                 break;
+            case "longTouch":
+                // 長時間タッチされた時の処理
+                break;
             case "none":
                 // 何もしていない状態
                 break;
         }
     }
 
-    private static void isPlayedScreenShift()
-    {
-        // ベースレイヤーのアニメーションの再生が終わっていたら
-        if (1 < screenShift.GetCurrentAnimatorStateInfo(0).normalizedTime)
-        {
-            // setに戻る
-            screenShift.SetBool("isPlayed", true);
-        }
-    }
-
-    private static void isFunctionedScreenShift()
-    {
-        // ベースレイヤーのアニメーションの再生が終わっていたら
-        if (1 < screenShift.GetCurrentAnimatorStateInfo(0).normalizedTime)
-        {
-            // setに戻る
-            screenShift.SetBool("isFunctioned", true);
-            Debug.Log(screenShift.GetCurrentAnimatorStateInfo(0).normalizedTime);
-        }
-    }
 }

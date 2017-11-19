@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Flick : MonoBehaviour {
 
+    private static int cancelFlame = 0; // フリック長押し判定  60で1秒
     private static Vector2 touchStartPos;
     private static Vector2 touchEndPos;
     private static string Direction = "none";
@@ -18,6 +19,9 @@ public class Flick : MonoBehaviour {
     {
         if (!Input.GetKey(KeyCode.Mouse0)) {
             Direction = "none";
+        } else
+        {
+            cancelFlame++;
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -27,6 +31,7 @@ public class Flick : MonoBehaviour {
         {
             touchEndPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             GetDirection();
+            cancelFlame = 0;
         }
     }
 
@@ -38,33 +43,44 @@ public class Flick : MonoBehaviour {
         //Debug.Log(directionX);
         //Debug.Log(directionY);
 
-        if (Mathf.Abs(directionY) < Mathf.Abs(directionX))
+        // タッチしている時間が60フレーム以内であれば
+        Debug.Log(cancelFlame);
+        if (cancelFlame < 60)
         {
-            if (30 < directionX)
+
+            if (Mathf.Abs(directionY) < Mathf.Abs(directionX))
             {
-                // 右向きにフリック;
-                Direction = "right";
+                if (30 < directionX)
+                {
+                    // 右向きにフリック;
+                    Direction = "right";
+                }
+                else if (directionX < -30)
+                {
+                    // 左向きにフリック;
+                    Direction = "left";
+                }
             }
-            else if (directionX < -30)
+            else if (Mathf.Abs(directionX) < Mathf.Abs(directionY))
             {
-                // 左向きにフリック;
-                Direction = "left";
+                if (30 < directionY)
+                {
+                    // 右向きにフリック;
+                    Direction = "up";
+                }
+                else if (directionY < -30)
+                {
+                    // 左向きにフリック;
+                    Direction = "down";
+                }
             }
-        } else if(Mathf.Abs(directionX) < Mathf.Abs(directionY))
+            else
+            {
+                Direction = "touch";
+            }
+        }else
         {
-            if (30 < directionY)
-            {
-                // 右向きにフリック;
-                Direction = "up";
-            }
-            else if (directionY < -30)
-            {
-                // 左向きにフリック;
-                Direction = "down";
-            }
-        } else
-        {
-            Direction = "touch";
+            Direction = "longTouch";
         }
     }
 }
