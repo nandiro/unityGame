@@ -87,6 +87,7 @@
     <Compile Include="Assets\BottomOutState.cs" />
     <Compile Include="Assets\Scripts\CSV.cs" />
     <Compile Include="Assets\Scripts\FieldManager.cs" />
+    <Compile Include="Assets\Scripts\FieldPlayer.cs" />
     <Compile Include="Assets\Scripts\FieldStep.cs" />
     <Compile Include="Assets\Scripts\Flick.cs" />
     <Compile Include="Assets\Scripts\NovelActor.cs" />

@@ -9,9 +9,12 @@ public class FieldManager : MonoBehaviour {
     private static bool isRunning = false;
     private float waitAnimeTime = 0.15f;
 
+    public static List<FieldStep> fieldStep = null;
+
     // Use this for initialization
-    void Start () {
+    void Awake () {
         backImage = GameObject.Find("BackCanvas/Back/BackImage").GetComponent<Image>();
+        fieldStep = FieldStep.MakeFieldStep();
     }
 
     // Update is called once per frame        
@@ -63,6 +66,7 @@ public class FieldManager : MonoBehaviour {
         isRunning = true;
 
         ScreenShift.In(flick);
+        
         // ScreenShiftIn待機時間。あとでAnimationの終了まで待機するコルーチンか何かを作る
         yield return new WaitForSeconds(waitAnimeTime);
 
