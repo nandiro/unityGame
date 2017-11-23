@@ -6,17 +6,12 @@ using UnityEngine.UI;
 public class FieldPlayer : MonoBehaviour {
 
     public static FieldStep currentFieldStep;
-    public static Transform playerRectTrans;
+    public static RectTransform playerRectTrans;
     
 	// Use this for initialization
 	void Start () {
         currentFieldStep = FieldManager.fieldStep[0];
-        Debug.Log(currentFieldStep);
-        Debug.Log(currentFieldStep.getPosition());
-        playerRectTrans = GetComponent<Transform>();
-        //GetComponent<Image>().enabled = false;
-        Debug.Log(playerRectTrans.position);
-        //playerRectTrans.position = new Vector3(-63,-21);
+        playerRectTrans = GetComponent<RectTransform>();
         UpdatePosition();
     }
 	
@@ -25,7 +20,7 @@ public class FieldPlayer : MonoBehaviour {
         if(currentFieldStep.Up != null)
         {
             currentFieldStep = FieldManager.fieldStep.Find(x => x.FieldStepID == currentFieldStep.Up);
-            //UpdatePosition();
+            UpdatePosition();
         }    
     }
     public static void MoveDown()
@@ -33,7 +28,7 @@ public class FieldPlayer : MonoBehaviour {
         if (currentFieldStep.Down != null)
         {
             currentFieldStep = FieldManager.fieldStep.Find(x => x.FieldStepID == currentFieldStep.Down);
-            //UpdatePosition();
+            UpdatePosition();
         }
     }
     public static void MoveRight()
@@ -41,7 +36,7 @@ public class FieldPlayer : MonoBehaviour {
         if (currentFieldStep.Right != null)
         {
             currentFieldStep = FieldManager.fieldStep.Find(x => x.FieldStepID == currentFieldStep.Right);
-            //UpdatePosition();
+            UpdatePosition();
         }
     }
     public static void MoveLeft()
@@ -49,17 +44,14 @@ public class FieldPlayer : MonoBehaviour {
         if (currentFieldStep.Left != null)
         {
             currentFieldStep = FieldManager.fieldStep.Find(x => x.FieldStepID == currentFieldStep.Left);
-            //UpdatePosition();
+            UpdatePosition();
         }
     }
 
     private static void UpdatePosition()
     {
-        Debug.Log("player" + playerRectTrans.position);
-        Debug.Log("current " + currentFieldStep.getPosition());
-        playerRectTrans.position = currentFieldStep.getPosition();
-        Debug.Log("player" + playerRectTrans.position);
-        //position = currentFieldStep.getPosition();
+        playerRectTrans.localPosition = currentFieldStep.getPosition();
+        Debug.Log(currentFieldStep);
     }
     
     private static void UpdateCurrentFieldStep()

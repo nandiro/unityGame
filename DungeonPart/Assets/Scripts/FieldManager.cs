@@ -70,7 +70,7 @@ public class FieldManager : MonoBehaviour {
         // ScreenShiftIn待機時間。あとでAnimationの終了まで待機するコルーチンか何かを作る
         yield return new WaitForSeconds(waitAnimeTime);
 
-        DisplayBackImage("3");
+        FieldPlayer.MoveUp();
 
         ScreenShift.Out(flick);
         
@@ -91,7 +91,7 @@ public class FieldManager : MonoBehaviour {
         // ScreenShiftIn待機時間。あとでAnimationの終了まで待機するコルーチンか何かを作る
         yield return new WaitForSeconds(waitAnimeTime);
 
-        DisplayBackImage("9");
+        FieldPlayer.MoveDown();
 
         ScreenShift.Out(flick);
 
@@ -112,7 +112,7 @@ public class FieldManager : MonoBehaviour {
         // ScreenShiftIn待機時間。あとでAnimationの終了まで待機するコルーチンか何かを作る
         yield return new WaitForSeconds(waitAnimeTime);
 
-        DisplayBackImage("1254");
+        FieldPlayer.MoveRight();
 
         ScreenShift.Out(flick);
 
@@ -133,7 +133,7 @@ public class FieldManager : MonoBehaviour {
         // ScreenShiftIn待機時間。あとでAnimationの終了まで待機するコルーチンか何かを作る
         yield return new WaitForSeconds(waitAnimeTime);
 
-        DisplayBackImage("7");
+        FieldPlayer.MoveLeft();
 
         ScreenShift.Out(flick);
 
