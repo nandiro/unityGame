@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Assets\BottomOutState.cs" />
     <Compile Include="Assets\Scripts\CSV.cs" />
+    <Compile Include="Assets\Scripts\Field.cs" />
     <Compile Include="Assets\Scripts\FieldManager.cs" />
     <Compile Include="Assets\Scripts\FieldPlayer.cs" />
     <Compile Include="Assets\Scripts\FieldStep.cs" />

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FieldStep {
 
-    private int? fieldStepID;
-    private int? fieldID;    
+    private int fieldStepID;
+    private int fieldID;    
     private int stepRow;
     private int stepColumn;
     private int? upStepID;
@@ -13,10 +13,13 @@ public class FieldStep {
     private int? leftStepID;
     private int? rightStepID;
     private int? eventID;
+ 
+    public int FieldID
+    {
+        get { return fieldID; }
+    }
 
-    private static Vector3[,] cell = new Vector3[5, 5];
-    
-    public int? FieldStepID
+    public int FieldStepID
     {
         get { return fieldStepID; }
     }    
@@ -37,6 +40,11 @@ public class FieldStep {
         get { return leftStepID; }
     }
 
+    public int Cell
+    {
+        get { return stepRow * 10 + stepColumn; }
+    }
+
 
     private FieldStep(string[] csvData)
     {
@@ -48,8 +56,7 @@ public class FieldStep {
         downStepID = StringConvertNullInt(csvData[5]);
         leftStepID = StringConvertNullInt(csvData[6]);
         rightStepID = StringConvertNullInt(csvData[7]);
-        eventID = StringConvertNullInt(csvData[8]);
-        setCellPosition();
+        eventID = StringConvertNullInt(csvData[8]);     
     }
 
     public static List<FieldStep> MakeFieldStep()
@@ -68,7 +75,7 @@ public class FieldStep {
     // FieldStepのある位置を返します
     public Vector3 getPosition()
     {
-        return cell[stepRow, stepColumn];
+        return Field.cell[Cell];
     }
 
     private string TestPrint()
@@ -97,25 +104,7 @@ public class FieldStep {
        return number;
     }
 
-    private static void setCellPosition()
-    {
-        cell[1,1] = new Vector3(-63, -63);
-        cell[1,2] = new Vector3(-21, -63);
-        cell[1,3] = new Vector3(21, -63);
-        cell[1,4] = new Vector3(63, -63);
-        cell[2,1] = new Vector3(-63, -21);
-        cell[2,2] = new Vector3(-21, -21);
-        cell[2,3] = new Vector3(21, -21);
-        cell[2,4] = new Vector3(63, -21);
-        cell[3,1] = new Vector3(-63, 21);
-        cell[3,2] = new Vector3(-21, 21);
-        cell[3,3] = new Vector3(21, 21);
-        cell[3,4] = new Vector3(63, 21);
-        cell[4,1] = new Vector3(-63, 63);
-        cell[4,2] = new Vector3(-21, 63);
-        cell[4,3] = new Vector3(21, 63);
-        cell[4,4] = new Vector3(63, 63);
-    }
+    
 
     public override string ToString()
     {
